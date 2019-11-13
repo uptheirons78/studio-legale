@@ -9,7 +9,7 @@ import { StyledHeader } from "./styles/Header";
 
 const NavItem = ({ page }) => (
   <li key={page.name}>
-    <Link activeStyle={{ color: "orange" }} to={page.path}>
+    <Link activeStyle={{ color: "#FAA916" }} to={page.path}>
       {page.name}
     </Link>
   </li>
@@ -27,8 +27,8 @@ const Header = ({ lang, toggler }) => {
       <nav>
         <ul className="nav-links">
           {lang === "IT"
-            ? itPages.map(page => <NavItem page={page} />)
-            : enPages.map(page => <NavItem page={page} />)}
+            ? itPages.map((page, idx) => <NavItem key={idx} page={page} />)
+            : enPages.map((page, idx) => <NavItem key={idx} page={page} />)}
           <Link to={flagLink} className="flag">
             <img src={flag} alt="Lingua" />
           </Link>

@@ -56,7 +56,7 @@ export const StyledHeader = styled.header`
         font-size: 1.2rem;
         color: ${props => props.theme.white};
         text-transform: uppercase;
-        font-weight: 400;
+        font-weight: 700;
       }
     }
 
