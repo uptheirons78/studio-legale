@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
+import { FaBars } from "react-icons/fa";
 
 import GlobalStyle from "./styles/GlobalStyles";
 import Header from "./header";
@@ -19,8 +20,6 @@ const theme = {
 const Layout = ({ children, lang }) => {
   const [togglerState, setTogglerState] = useState(false);
   const toggler = togglerState ? "header open" : "header";
-  const togglerContent = togglerState ? "Close" : "Menu";
-
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -41,7 +40,7 @@ const Layout = ({ children, lang }) => {
       />
       <main>{children}</main>
       <MobileToggler onClick={() => setTogglerState(!togglerState)}>
-        {togglerContent}
+        <FaBars />
       </MobileToggler>
     </ThemeProvider>
   );
@@ -50,22 +49,22 @@ const Layout = ({ children, lang }) => {
 export default Layout;
 
 const MobileToggler = styled.button`
-  padding: 9px 25px;
+  padding: 5px 7px;
   color: ${props => props.theme.white};
   text-decoration: none;
   background-color: ${props => props.theme.primaryColor};
   border: none;
-  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
-  font-size: 1rem;
-  font-weight: 400;
   position: absolute;
-  top: 2%;
-  right: 2%;
+  top: 0;
+  right: 0;
   z-index: 1000;
-  &:hover {
-    background-color: ${props => props.theme.primaryColor};
+
+  svg {
+    margin-top: 2px;
+    width: 2rem;
+    height: 2rem;
   }
   &:focus {
     outline: none;

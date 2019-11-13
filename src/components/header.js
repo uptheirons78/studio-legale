@@ -1,24 +1,28 @@
 import React from "react";
 import { Link } from "gatsby";
-import styled from "styled-components";
+
 import ItalyFlag from "../images/italy-flag.png";
 import UKFlag from "../images/united-kingdom-flag.png";
+import Logo from "../images/logo-studio-barberio.png";
 import { itPages, enPages } from "../data/pages";
+import { StyledHeader } from "./styles/Header";
 
 const NavItem = ({ page }) => (
   <li key={page.name}>
-    <Link to={page.path}>{page.name}</Link>
+    <Link activeStyle={{ color: "orange" }} to={page.path}>
+      {page.name}
+    </Link>
   </li>
 );
 
-const Header = ({ siteTitle, lang, toggler }) => {
+const Header = ({ lang, toggler }) => {
   const flag = lang === "IT" ? UKFlag : ItalyFlag;
   const flagLink = lang === "IT" ? "/en/" : "/";
 
   return (
     <StyledHeader className={`${toggler}`}>
       <Link to="/" className="logo">
-        <h1>{siteTitle}</h1>
+        <img src={Logo} alt="Studio Legale Barberio" />
       </Link>
       <nav>
         <ul className="nav-links">
@@ -34,46 +38,3 @@ const Header = ({ siteTitle, lang, toggler }) => {
   );
 };
 export default Header;
-
-const StyledHeader = styled.header`
-  font-family: "Open Sans", sans-serif;
-  background: #0a0a0a;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 3rem;
-
-  h1 {
-    font-size: 2rem;
-    text-transform: uppercase;
-  }
-
-  nav {
-    .flag {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      /* border: 1px solid green; */
-      img {
-        width: 24px;
-        height: 16px;
-      }
-    }
-    .nav-links {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      li {
-        margin-right: 1rem;
-      }
-      a {
-        font-size: 1.2rem;
-        color: ${props => props.theme.white};
-        text-transform: uppercase;
-        font-weight: 400;
-      }
-    }
-  }
-`;
