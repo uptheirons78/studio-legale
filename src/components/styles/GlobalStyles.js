@@ -1,18 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  *, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
   html {
     box-sizing: border-box;
     font-size: 10px;
   }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
   body {
-    padding: 0;
-    margin: 0;
     font-size: 1.5rem;
-    line-height: 1.5;
+    /* line-height: 1.5; */
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
