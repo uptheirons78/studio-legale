@@ -76,6 +76,17 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
+
+  .background {
+    min-height: 40vh;
+    background-position: center;
+    background-size: cover;
+    opacity: 1 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(34, 34, 34, 0.5);
+  }
 `;
 
 export default GlobalStyle;
