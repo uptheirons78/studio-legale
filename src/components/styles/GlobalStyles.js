@@ -11,11 +11,15 @@ const GlobalStyle = createGlobalStyle`
     font-size: 10px;
   }
   body {
-    font-size: 1.5rem;
-    /* line-height: 1.5; */
+    font-size: 1.6rem;
+    line-height: 1.5;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
+
+    @media (max-width: 520px) {
+    font-size: 1.5rem;
+    }
   }
   h1,h2,h3,h4,h5,h6 {
     font-family: 'Open Sans', sans-serif;
@@ -34,6 +38,14 @@ const GlobalStyle = createGlobalStyle`
   h4 {
     font-size: 2rem;
     color: ${props => props.theme.primaryColor}
+  }
+
+  p {
+
+    &:not(:nth-child(1)) {
+    margin-top: 1.5rem;
+    }
+    color: ${props => props.theme.black};
   }
   ul {
     list-style-type: none;

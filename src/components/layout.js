@@ -16,7 +16,7 @@ const theme = {
   grey: "#f7f7f7",
   meta: "#a7a7a7",
   white: "#edf0f1",
-  maxWidth: "1200px",
+  maxWidth: "1400px",
 };
 
 const Layout = ({ children, lang }) => {
