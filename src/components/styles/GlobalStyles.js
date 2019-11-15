@@ -63,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
     } */
   }
 
-  strong {
+  strong, b {
     color: ${props => props.theme.primaryColor};
   }
   .button {
@@ -98,6 +98,16 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
     background-color: rgba(34, 34, 34, 0.5);
+  }
+
+  .contentful-markdown {
+
+    img {
+    display: block;
+    max-width: 600px;
+    width: 100%;
+    margin: 2rem auto;
+    }
   }
 `;
 
